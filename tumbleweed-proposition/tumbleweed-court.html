@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tumbleweed × JMStudio — Proposition courte</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --orange: #FF520E;
+    --cream: #ffffff;
+    --black: #0a0a0a;
+    --dark: #1A1A1A;
+    --mid: #888;
+    --rule: rgba(0,0,0,0.12);
+    --rule-light: rgba(255,255,255,0.12);
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--black);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--black);
+    border-bottom: 1px solid #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    height: 52px;
+  }
+  .nav-brand {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .nav-right { display: flex; align-items: center; gap: 28px; }
+  .nav-link {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-link:hover { color: #fff; }
+  .nav-dot {
+    width: 26px; height: 26px;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .nav-dot-inner { width: 8px; height: 8px; background: #fff; border-radius: 50%; }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--orange);
+    color: var(--black);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 52px 0 0;
+  }
+  .hero-inner {
+    padding: 80px 48px 72px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .hero-eyebrow {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.45);
+    margin-bottom: 28px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .hero-title {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(52px, 8vw, 120px);
+    line-height: 0.9;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 32px;
+  }
+  .hero-sub {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(0,0,0,0.55);
+    line-height: 1.6;
+    max-width: 420px;
+  }
+  .hero-footer {
+    border-top: 1px solid rgba(0,0,0,0.12);
+    padding: 18px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .hero-location {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.4);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* ─── SECTIONS ─── */
+  section { padding-top: 0; }
+
+  .section-inner {
+    padding: 80px 48px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mid);
+    font-family: 'DM Sans', sans-serif;
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(32px, 4.5vw, 64px);
+    line-height: 0.95;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+
+  /* ─── CONTEXTE ─── */
+  .contexte-section {
+    background: var(--cream);
+    border-bottom: 1px solid var(--rule);
+  }
+  .contexte-body {
+    font-size: 15.5px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #333;
+    max-width: 680px;
+    margin-bottom: 32px;
+  }
+  .contexte-close {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--black);
+    letter-spacing: 0.01em;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    max-width: 680px;
+  }
+
+  /* ─── OFFRES ─── */
+  .offres-section {
+    background: var(--black);
+    color: #fff;
+    border-bottom: 1px solid #222;
+  }
+  .offres-section .section-label { color: rgba(255,255,255,0.25); }
+  .offres-section .section-title { color: #fff; }
+
+  .packs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 32px;
+  }
+
+  .pack-col {
+    padding: 40px 32px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .pack-col:last-child { border-right: none; }
+  .pack-col.featured {
+    background: #111;
+    border-top: 3px solid var(--orange);
+  }
+
+  .pack-badge {
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: var(--orange);
+    padding: 4px 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #fff;
+    white-space: nowrap;
+  }
+
+  .pack-name-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .pack-label-tag {
+    font-family: 'Anton', sans-serif;
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .pack-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 18px;
+    color: #fff;
+  }
+
+  .pack-price {
+    font-family: 'Anton', sans-serif;
+    font-size: 56px;
+    color: var(--orange);
+    line-height: 1;
+    letter-spacing: 0.01em;
+    margin-bottom: 4px;
+  }
+  .pack-price span { font-size: 28px; }
+  .pack-ht {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.25);
+    text-transform: uppercase;
+    font-family: 'DM Sans', sans-serif;
+    margin-bottom: 28px;
+  }
+
+  .pack-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    flex: 1;
+  }
+  .pack-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .pack-row:last-child { border-bottom: none; }
+  .pack-row-key {
+    font-size: 11px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.35);
+  }
+  .pack-row-val {
+    font-size: 11.5px;
+    font-weight: 500;
+    color: #fff;
+    text-align: right;
+  }
+  .pack-row-val.accent { color: var(--orange); }
+
+  .packs-common {
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.7;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 24px;
+  }
+  .packs-common strong { color: rgba(255,255,255,0.65); font-weight: 500; }
+
+  /* ─── DÉROULEMENT ─── */
+  .deroulement-section {
+    background: #f7f7f5;
+    border-bottom: 1px solid var(--rule);
+  }
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 640px;
+    margin-bottom: 36px;
+  }
+  .timeline-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    align-items: baseline;
+  }
+  .timeline-row:last-child { border-bottom: none; }
+  .timeline-day {
+    font-family: 'Anton', sans-serif;
+    font-size: 15px;
+    color: var(--orange);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .timeline-desc {
+    font-size: 13.5px;
+    font-weight: 300;
+    color: #444;
+    line-height: 1.6;
+  }
+  .timeline-desc strong { font-weight: 500; color: var(--black); }
+  .deroulement-close {
+    font-size: 13px;
+    font-weight: 300;
+    color: #666;
+    line-height: 1.7;
+    max-width: 560px;
+  }
+
+  /* ─── CTA ─── */
+  .cta-section {
+    background: var(--black);
+    color: #fff;
+    padding: 80px 48px;
+  }
+  .cta-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 64px;
+    align-items: end;
+  }
+  .cta-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    font-family: 'DM Sans', sans-serif;
+    margin-bottom: 20px;
+  }
+  .cta-title {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(36px, 5vw, 72px);
+    line-height: 0.9;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 36px;
+  }
+  .cta-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 36px;
+  }
+  .cta-contact-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
+  }
+  .cta-contact-line {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.45);
+  }
+  .cta-btn {
+    display: inline-block;
+    background: var(--orange);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px 28px;
+    transition: opacity 0.2s;
+  }
+  .cta-btn:hover { opacity: 0.88; }
+  .cta-validity {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 4px;
+  }
+  .cta-validity-text {
+    font-size: 11px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #050505;
+    padding: 20px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #111;
+  }
+  footer span {
+    font-size: 10px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 720px) {
+    .hero-inner { padding: 48px 24px 48px; }
+    .hero-footer { padding: 16px 24px; }
+    .section-inner { padding: 56px 24px; }
+    .packs-grid { grid-template-columns: 1fr; }
+    .pack-col { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .pack-col:last-child { border-bottom: none; }
+    .cta-section { padding: 56px 24px; }
+    .cta-inner { grid-template-columns: 1fr; gap: 40px; }
+    .cta-validity { padding-bottom: 0; }
+    footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <img src="https://raw.githubusercontent.com/Jeewelkn/tumbleweed/main/images/JMSTUDIO.png" style="height:114px;object-fit:contain;vertical-align:middle;">
+  <div class="nav-right">
+    <a href="#contexte" class="nav-link">Contexte</a>
+    <a href="#offres" class="nav-link">Offres</a>
+    <a href="#deroulement" class="nav-link">Déroulement</a>
+    <a href="#contact" class="nav-link">Contact</a>
+    <div class="nav-dot"><div class="nav-dot-inner"></div></div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Proposition de collaboration · JMStudio</div>
+    <div class="hero-title">Tumbleweed<br>× JMStudio</div>
+    <p class="hero-sub">Stratégie vidéo — Proposition de collaboration</p>
+  </div>
+  <div class="hero-footer">
+    <span class="hero-location">Nantes · Août 2026</span>
+    <span class="hero-location">Production vidéo & motion design</span>
+  </div>
+</section>
+
+<!-- ═══ CONTEXTE ═══ -->
+<section class="contexte-section" id="contexte">
+  <div class="section-inner">
+    <div class="section-label">Contexte</div>
+    <div class="section-title">Là où vous<br>en êtes.</div>
+    <p class="contexte-body">2 200 abonnés Instagram pour 15 publications : votre communauté est en avance sur votre contenu. Les publicités CBD étant restreintes sur Meta et Google, le contenu organique est votre principal levier d'acquisition scalable. Et vous disposez d'un atout que personne d'autre n'a à Nantes : un lieu qui est un plateau de tournage naturel.</p>
+    <p class="contexte-close">Une stratégie qui couvre tout le parcours client, de la découverte à la fidélisation.</p>
+  </div>
+</section>
+
+<!-- ═══ OFFRES ═══ -->
+<section class="offres-section" id="offres">
+  <div class="section-inner" style="max-width:100%;padding:80px 48px;">
+    <div style="max-width:960px;margin:0 auto;">
+      <div class="section-label">Tarifs</div>
+      <div class="section-title">Trois niveaux<br>d'engagement.</div>
+
+      <div class="packs-grid">
+
+        <!-- ESSENTIEL -->
+        <div class="pack-col">
+          <div class="pack-name-group">
+            <span class="pack-label-tag">Pack</span>
+            <span class="pack-name">Essentiel</span>
+          </div>
+          <div class="pack-price">1 900<span>€</span></div>
+          <div class="pack-ht">HT</div>
+          <div class="pack-rows">
+            <div class="pack-row">
+              <span class="pack-row-key">Vidéos livrées</span>
+              <span class="pack-row-val">3</span>
+            </div>
+            <div class="pack-row">
+              <span class="pack-row-key">Tournage</span>
+              <span class="pack-row-val">½ journée</span>
+            </div>
+            <div class="pack-row">
+              <span class="pack-row-key">Livraison</span>
+              <span class="pack-row-val">10 jours</span>
+            </div>
+            <div class="pack-row">
+              <span class="pack-row-key">Révisions via Notion</span>
+              <span class="pack-row-val">1 aller-retour</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONVERSION (featured) -->
+        <div class="pack-col featured">
+          <div class="pack-badge">Recommandé</div>
+          <div class="pack-name-group">
+            <span class="pack-label-tag">Pack</span>
+            <span class="pack-name">Conversion</span>
+          </div>
+          <div class="pack-price">2 900<span>€</span></div>
+          <div class="pack-ht">HT</div>
+          <div class="pack-rows">
+            <div class="pack-row">
+              <span class="pack-row-key">Vidéos livrées</span>
+              <span class="pack-row-val">6 dont 1 film de marque</span>
+            </div>
+            <div class="pack-row">
+              <span class="pack-row-key">Tournage</span>
+              <span class="pack-row-val">1 journée</span>
+            </div>
+            <div class="pack-row">
+              <span class="pack-row-key">Livraison</span>
+              <span class="pack-row-val">20 jours</span>
+            </div>
+            <div class="pack-row">
+              <span class="pack-row-key">Révisions via Notion</span>
+              <span class="pack-row-val">2 allers-retours</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIGNATURE -->
+        <div class="pack-col">
+          <div class="pack-name-group">
+            <span class="pack-label-tag">Pack</span>
+            <span class="pack-name">Signature</span>
+          </div>
+          <div class="pack-price">3 900<span>€</span></div>
+          <div class="pack-ht">HT</div>
+          <div class="pack-rows">
+            <div class="pack-row">
+              <span class="pack-row-key">Vidéos livrées</span>
+              <span class="pack-row-val">10 dont 3 événements</span>
+            </div>
+            <div class="pack-row">
+              <span class="pack-row-key">Tournage</span>
+              <span class="pack-row-val">2 journées</span>
+            </div>
+            <div class="pack-row">
+              <span class="pack-row-key">Livraison</span>
+              <span class="pack-row-val">Sur 3 mois</span>
+            </div>
+            <div class="pack-row">
+              <span class="pack-row-key">Révisions via Notion</span>
+              <span class="pack-row-val accent">Illimitées</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="packs-common"><strong>Commun à tous les packs :</strong> 4K · sous-titres · graphismes personnalisés · droits d'exploitation illimités · 1 interlocuteur unique.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DÉROULEMENT ═══ -->
+<section class="deroulement-section" id="deroulement">
+  <div class="section-inner">
+    <div class="section-label">Planning</div>
+    <div class="section-title">De la signature<br>à la publication.</div>
+
+    <div class="timeline">
+      <div class="timeline-row">
+        <span class="timeline-day">J0</span>
+        <span class="timeline-desc"><strong>Validation et acompte 30 %</strong></span>
+      </div>
+      <div class="timeline-row">
+        <span class="timeline-day">J+7</span>
+        <span class="timeline-desc"><strong>Tournage sur place</strong></span>
+      </div>
+      <div class="timeline-row">
+        <span class="timeline-day">J+12</span>
+        <span class="timeline-desc"><strong>Première version</strong>, révisions via Notion</span>
+      </div>
+      <div class="timeline-row">
+        <span class="timeline-day">J+20</span>
+        <span class="timeline-desc"><strong>Contenus livrés</strong>, prêts à publier</span>
+      </div>
+    </div>
+
+    <p class="deroulement-close">Zéro charge mentale pour votre équipe : brief, repérage, storyboard et planning sont gérés de mon côté.</p>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div>
+      <div class="cta-label">Prochaine étape</div>
+      <div class="cta-title">On en<br>parle ?</div>
+      <div class="cta-contacts">
+        <div class="cta-contact-name">Florian — JMStudio</div>
+        <div class="cta-contact-line">06 89 30 84 23 · jmstudiovisuals@gmail.com</div>
+      </div>
+      <a href="tumbleweed.html" class="cta-btn">Voir la stratégie détaillée →</a>
+      <p style="margin-top:20px;font-size:11px;font-weight:300;color:rgba(255,255,255,0.2);letter-spacing:0.08em;text-transform:uppercase;font-family:'DM Sans',sans-serif;">Proposition valable 30 jours.</p>
+    </div>
+    <div class="cta-validity">
+      <div class="cta-validity-text">JMStudio<br>Nantes, France</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>JMStudio × Tumbleweed Nantes · 2026</span>
+  <span>Production vidéo & motion design · Nantes</span>
+</footer>
+
+</body>
+</html>
