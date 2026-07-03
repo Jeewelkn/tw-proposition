@@ -488,11 +488,27 @@
   </div>
 </section>
 
-<!-- ═══ 1b — PROBLÉMATIQUE ═══ -->
+<!-- ═══ 1b — PROBLÉMATIQUE / RÉPONSE ═══ -->
+<style>
+@media (max-width:768px) {
+  .pb-cols { flex-direction:column !important; gap:24px !important; }
+}
+</style>
 <section style="background:#fff;border-bottom:1px solid rgba(10,10,10,0.15);padding:clamp(36px,3.5vw,60px) 48px;">
-  <div style="max-width:720px;">
-    <div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(10,10,10,0.45);margin-bottom:16px;">La problématique</div>
-    <p style="font-family:'DM Sans',sans-serif;font-size:clamp(18px,1.8vw,26px);font-weight:300;line-height:1.5;color:#0a0a0a;">Comment transformer l'un des lieux les plus remarquables de Nantes en un flux régulier de nouveaux clients, sans ralentir votre activité quotidienne ?</p>
+  <div class="pb-cols" style="display:flex;gap:clamp(32px,4vw,64px);align-items:stretch;">
+
+    <!-- Colonne gauche -->
+    <div style="flex:1;">
+      <div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(10,10,10,0.45);margin-bottom:14px;">La problématique</div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:clamp(16px,1.4vw,20px);font-weight:300;line-height:1.55;color:#0a0a0a;">Comment transformer l'un des lieux les plus remarquables de Nantes en un flux régulier de nouveaux clients, sans ralentir votre activité quotidienne ?</p>
+    </div>
+
+    <!-- Colonne droite -->
+    <div style="flex:1;border:1px solid rgba(10,10,10,0.15);padding:clamp(20px,2vw,26px);display:flex;flex-direction:column;justify-content:center;">
+      <div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(10,10,10,0.45);margin-bottom:12px;">La réponse</div>
+      <p style="font-family:'Anton',sans-serif;font-size:clamp(22px,2.2vw,28px);line-height:1.1;text-transform:uppercase;color:#0a0a0a;">Un système vidéo qui travaille pendant que vous servez vos clients.</p>
+    </div>
+
   </div>
 </section>
 
