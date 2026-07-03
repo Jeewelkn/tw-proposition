@@ -911,32 +911,36 @@
 </nav>
 
 <!-- ═══════ HERO ═══════ -->
-<section class="hero" style="position:relative; min-height:auto;">
-  <div style="position:relative; overflow:hidden; height:280px; width:100%;">
-    
-    <!-- Fond organique -->
-    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 75% 10%, #cc1a00 0%, #FF520E 35%, #ff6535 65%, #ffaa88 100%);z-index:0;"></div>
-    
-    <!-- Lumière organique basse gauche -->
-    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 10% 90%, rgba(255,255,255,0.22) 0%, transparent 55%);z-index:1;pointer-events:none;"></div>
-    
-    <!-- Grille colonnes subtile -->
-    <div style="position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent calc(25% - 1px),rgba(0,0,0,0.06) calc(25% - 1px),rgba(0,0,0,0.06) 25%);z-index:2;pointer-events:none;"></div>
-    
-    <!-- Texte fantôme TUMBLEWEED -->
-    <div style="position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);font-family:'Anton',sans-serif;font-size:160px;color:rgba(0,0,0,0.1);white-space:nowrap;letter-spacing:0.01em;line-height:1;z-index:3;">TUMBLEWEED</div>
-    
-    <!-- Contenu -->
-    <div style="position:relative;z-index:4;height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:32px 40px;">
-      <span style="font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(0,0,0,0.38);">Document stratégique · JMStudio</span>
-      <div style="font-family:'Anton',sans-serif;font-size:clamp(48px,6vw,80px);line-height:0.86;text-transform:uppercase;color:#fff;letter-spacing:0.01em;">PROPOSITION DE COLLABORATION VIDÉO</div>
-      <span style="font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(0,0,0,0.3);">JMStudio · Tumbleweed Nantes · 2026</span>
-    </div>
+<section style="position:relative; min-height:90vh; background:radial-gradient(ellipse at 75% 10%, #cc1a00 0%, #FF520E 35%, #ff6535 65%, #ffaa88 100%); display:flex; flex-direction:column; justify-content:space-between; overflow:hidden; padding-top:52px;">
 
+  <!-- Lumière basse gauche -->
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 10% 90%, rgba(255,255,255,0.22) 0%, transparent 55%);z-index:0;pointer-events:none;"></div>
+
+  <!-- Ligne verticale centrale -->
+  <div style="position:absolute;top:0;bottom:0;left:50%;width:1px;background:rgba(10,10,10,0.08);z-index:0;pointer-events:none;"></div>
+
+  <!-- Grille colonnes -->
+  <div style="position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent calc(25% - 1px),rgba(0,0,0,0.06) calc(25% - 1px),rgba(0,0,0,0.06) 25%);z-index:0;pointer-events:none;"></div>
+
+  <!-- Watermark TUMBLEWEED -->
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);font-family:'Anton',sans-serif;font-size:clamp(80px,14vw,200px);color:rgba(10,10,10,0.08);white-space:nowrap;letter-spacing:0.01em;line-height:1;z-index:1;user-select:none;pointer-events:none;">TUMBLEWEED</div>
+
+  <!-- MÉTADONNÉES HAUT -->
+  <div style="position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:28px 40px;">
+    <span style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:300;letter-spacing:0.15em;text-transform:uppercase;color:rgba(10,10,10,0.55);">Document stratégique · JMStudio</span>
+    <span style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:300;letter-spacing:0.15em;text-transform:uppercase;color:rgba(10,10,10,0.55);">Nantes · 2026</span>
   </div>
-  <div style="background:#fff;padding:28px 40px;">
-    <p style="font-family:'DM Sans',sans-serif;font-size:17px;font-weight:300;color:#0a0a0a;line-height:1.65;max-width:600px;margin:0;">Comment transformer l'un des lieux les plus remarquables de Nantes en un flux régulier de nouveaux clients, sans ralentir votre activité quotidienne.</p>
+
+  <!-- BLOC TITRE BAS -->
+  <div style="position:relative;z-index:2;padding:0 40px 56px;">
+    <div style="font-family:'DM Sans',sans-serif;font-size:13px;font-weight:300;letter-spacing:0.25em;text-transform:uppercase;color:rgba(10,10,10,0.65);margin-bottom:14px;">Tumbleweed × JMStudio</div>
+    <div style="font-family:'Anton',sans-serif;font-size:clamp(56px,8vw,120px);line-height:0.92;text-transform:uppercase;color:#0a0a0a;letter-spacing:0.01em;margin-bottom:28px;">Proposition de<br>collaboration vidéo</div>
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:300;letter-spacing:0.12em;text-transform:uppercase;color:rgba(10,10,10,0.55);">Stratégie · Production · Diffusion</span>
+      <span style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:300;letter-spacing:0.12em;text-transform:uppercase;color:rgba(10,10,10,0.55);">TC 00:00:00:00</span>
+    </div>
   </div>
+
 </section>
 
 <!-- ═══════ CONTEXTE ═══════ -->
