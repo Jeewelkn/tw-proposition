@@ -945,8 +945,14 @@
 
 </section>
 
-<!-- ═══════ TRANSITION ═══════ -->
-<div style="background:#fff;padding:clamp(56px,6vw,100px) 32px;">
+<!-- ═══════ PROBLÉMATIQUE / RÉPONSE ═══════ -->
+<style>
+@media (max-width:768px) {
+  .transition-cols { flex-direction:column !important; }
+  .transition-col-left { border-right:none !important; padding-right:0 !important; margin-bottom:32px; }
+}
+</style>
+<section style="background:#fff;border-top:1px solid rgba(10,10,10,0.15);border-bottom:1px solid rgba(10,10,10,0.15);padding:clamp(56px,6vw,100px) 32px;">
   <div class="transition-cols" style="display:flex;gap:clamp(32px,4vw,64px);align-items:flex-start;">
 
     <!-- Colonne gauche -->
@@ -962,13 +968,7 @@
     </div>
 
   </div>
-</div>
-<style>
-@media (max-width:768px) {
-  .transition-cols { flex-direction:column !important; }
-  .transition-col-left { border-right:none !important; padding-right:0 !important; border-bottom:none; margin-bottom:32px; }
-}
-</style>
+</section>
 
 <!-- ═══════ CONTEXTE ═══════ -->
 <section id="contexte" style="background:#fff;border-bottom:1px solid var(--rule);padding-bottom:0;margin-bottom:0;">
