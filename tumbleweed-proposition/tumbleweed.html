@@ -946,9 +946,29 @@
 </section>
 
 <!-- ═══════ TRANSITION ═══════ -->
-<div style="background:#fff;padding:clamp(48px,6vw,96px) 32px;">
-  <p style="font-family:'DM Sans',sans-serif;font-size:clamp(20px,2vw,30px);font-weight:300;line-height:1.4;color:var(--black);max-width:780px;">Comment transformer l'un des lieux les plus remarquables de Nantes en un flux régulier de nouveaux clients, sans ralentir votre activité quotidienne.</p>
+<div style="background:#fff;padding:clamp(56px,6vw,100px) 32px;">
+  <div class="transition-cols" style="display:flex;gap:clamp(32px,4vw,64px);align-items:flex-start;">
+
+    <!-- Colonne gauche -->
+    <div class="transition-col-left" style="flex:1;border-right:1px solid rgba(10,10,10,0.12);padding-right:clamp(32px,4vw,64px);">
+      <div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(10,10,10,0.45);margin-bottom:16px;">La problématique</div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:clamp(16px,1.4vw,20px);font-weight:300;line-height:1.55;color:#0a0a0a;">Comment transformer l'un des lieux les plus remarquables de Nantes en un flux régulier de nouveaux clients, sans ralentir votre activité quotidienne ?</p>
+    </div>
+
+    <!-- Colonne droite -->
+    <div style="flex:1;">
+      <div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(10,10,10,0.45);margin-bottom:16px;">La réponse</div>
+      <p style="font-family:'Anton',sans-serif;font-size:clamp(24px,2.4vw,34px);line-height:1.1;text-transform:uppercase;color:#0a0a0a;">Un système vidéo qui travaille pendant que vous servez vos clients.</p>
+    </div>
+
+  </div>
 </div>
+<style>
+@media (max-width:768px) {
+  .transition-cols { flex-direction:column !important; }
+  .transition-col-left { border-right:none !important; padding-right:0 !important; border-bottom:none; margin-bottom:32px; }
+}
+</style>
 
 <!-- ═══════ CONTEXTE ═══════ -->
 <section id="contexte" style="background:#fff;border-bottom:1px solid var(--rule);padding-bottom:0;margin-bottom:0;">
