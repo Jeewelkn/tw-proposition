@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tumbleweed × JMStudio — Proposition courte</title>
+<title>Tumbleweed × JMStudio — Proposition</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap');
 
@@ -40,15 +40,6 @@
     padding: 0 32px;
     height: 52px;
   }
-  .nav-brand {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    color: #fff;
-    text-transform: uppercase;
-  }
-  .nav-right { display: flex; align-items: center; gap: 28px; }
   .nav-link {
     font-size: 10px;
     font-weight: 400;
@@ -59,6 +50,7 @@
     transition: color 0.2s;
   }
   .nav-link:hover { color: #fff; }
+  .nav-right { display: flex; align-items: center; gap: 28px; }
   .nav-dot {
     width: 26px; height: 26px;
     border: 1px solid rgba(255,255,255,0.25);
@@ -67,74 +59,8 @@
   }
   .nav-dot-inner { width: 8px; height: 8px; background: #fff; border-radius: 50%; }
 
-  /* ─── HERO ─── */
-  .hero {
-    background: var(--orange);
-    color: var(--black);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 52px 0 0;
-  }
-  .hero-inner {
-    padding: 80px 48px 72px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-  .hero-eyebrow {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(0,0,0,0.45);
-    margin-bottom: 28px;
-    font-family: 'DM Sans', sans-serif;
-  }
-  .hero-title {
-    font-family: 'Anton', sans-serif;
-    font-size: clamp(52px, 8vw, 120px);
-    line-height: 0.9;
-    letter-spacing: 0.01em;
-    text-transform: uppercase;
-    color: #fff;
-    margin-bottom: 32px;
-  }
-  .hero-sub {
-    font-size: 15px;
-    font-weight: 300;
-    color: rgba(0,0,0,0.55);
-    line-height: 1.6;
-    max-width: 420px;
-  }
-  .hero-footer {
-    border-top: 1px solid rgba(0,0,0,0.12);
-    padding: 18px 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .hero-location {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: rgba(0,0,0,0.4);
-    font-family: 'DM Sans', sans-serif;
-  }
-
-  /* ─── SECTIONS ─── */
-  section { padding-top: 0; }
-
-  .section-inner {
-    padding: 80px 48px;
-    max-width: 960px;
-    margin: 0 auto;
-  }
-
-  .section-label {
+  /* ─── SHARED ─── */
+  .s-label {
     font-size: 10px;
     font-weight: 500;
     letter-spacing: 0.18em;
@@ -143,72 +69,175 @@
     font-family: 'DM Sans', sans-serif;
     margin-bottom: 20px;
   }
+  .s-label-dark { color: rgba(255,255,255,0.25); }
 
-  .section-title {
+  .s-title {
     font-family: 'Anton', sans-serif;
-    font-size: clamp(32px, 4.5vw, 64px);
-    line-height: 0.95;
+    font-size: clamp(36px, 5vw, 72px);
+    line-height: 0.92;
     letter-spacing: 0.01em;
     text-transform: uppercase;
-    margin-bottom: 36px;
+    margin-bottom: 40px;
+  }
+  .s-title-white { color: #fff; }
+
+  .wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 88px 48px;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--orange);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 52px;
+  }
+  .hero-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 72px 48px 56px;
+  }
+  .hero-eyebrow {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.4);
+    font-family: 'DM Sans', sans-serif;
+    margin-bottom: 24px;
+  }
+  .hero-title {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(52px, 9vw, 128px);
+    line-height: 0.88;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 28px;
+  }
+  .hero-sub {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(0,0,0,0.5);
+    line-height: 1.6;
+    max-width: 400px;
+  }
+  .hero-foot {
+    border-top: 1px solid rgba(0,0,0,0.12);
+    padding: 18px 48px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .hero-foot span {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.35);
+    font-family: 'DM Sans', sans-serif;
   }
 
   /* ─── CONTEXTE ─── */
-  .contexte-section {
-    background: var(--cream);
-    border-bottom: 1px solid var(--rule);
-  }
+  .contexte { background: #fff; border-bottom: 1px solid var(--rule); }
   .contexte-body {
     font-size: 15.5px;
     font-weight: 300;
     line-height: 1.8;
     color: #333;
     max-width: 680px;
+    margin-bottom: 28px;
+  }
+  .contexte-callout {
+    border: 1px solid rgba(0,0,0,0.14);
+    padding: 24px 28px;
+    max-width: 680px;
     margin-bottom: 32px;
+  }
+  .contexte-callout p {
+    font-size: 13.5px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: #555;
   }
   .contexte-close {
     font-size: 13px;
     font-weight: 500;
     color: var(--black);
-    letter-spacing: 0.01em;
-    padding-top: 24px;
-    border-top: 1px solid var(--rule);
     max-width: 680px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* ─── CE QUE LA VIDÉO CHANGE ─── */
+  .video-change { background: #f7f7f5; border-bottom: 1px solid var(--rule); }
+  .video-change-intro {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: #444;
+    max-width: 680px;
+    margin-bottom: 48px;
+  }
+  .change-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.1);
+    max-width: 100%;
+  }
+  .change-item {
+    background: #f7f7f5;
+    padding: 36px 28px;
+  }
+  .change-num {
+    font-family: 'Anton', sans-serif;
+    font-size: 36px;
+    color: rgba(0,0,0,0.1);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .change-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 10px;
+    letter-spacing: 0.01em;
+  }
+  .change-desc {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #555;
   }
 
   /* ─── OFFRES ─── */
-  .offres-section {
-    background: var(--black);
-    color: #fff;
-    border-bottom: 1px solid #222;
-  }
-  .offres-section .section-label { color: rgba(255,255,255,0.25); }
-  .offres-section .section-title { color: #fff; }
+  .offres { background: var(--black); color: #fff; border-bottom: 1px solid #222; }
 
   .packs-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     border: 1px solid rgba(255,255,255,0.08);
-    margin-bottom: 32px;
+    margin-bottom: 28px;
   }
-
-  .pack-col {
+  .pack {
     padding: 40px 32px;
     border-right: 1px solid rgba(255,255,255,0.08);
     display: flex;
     flex-direction: column;
     position: relative;
   }
-  .pack-col:last-child { border-right: none; }
-  .pack-col.featured {
-    background: #111;
-    border-top: 3px solid var(--orange);
-  }
+  .pack:last-child { border-right: none; }
+  .pack.featured { background: #111; border-top: 3px solid var(--orange); }
 
   .pack-badge {
     position: absolute;
-    top: -1px;
-    left: 50%;
+    top: 0; left: 50%;
     transform: translateX(-50%) translateY(-50%);
     background: var(--orange);
     padding: 4px 14px;
@@ -221,13 +250,13 @@
     white-space: nowrap;
   }
 
-  .pack-name-group {
+  .pack-name-row {
     display: flex;
     align-items: center;
     gap: 8px;
     margin-bottom: 16px;
   }
-  .pack-label-tag {
+  .pack-tag {
     font-family: 'Anton', sans-serif;
     font-size: 13px;
     color: rgba(255,255,255,0.3);
@@ -242,13 +271,13 @@
 
   .pack-price {
     font-family: 'Anton', sans-serif;
-    font-size: 56px;
+    font-size: 54px;
     color: var(--orange);
     line-height: 1;
     letter-spacing: 0.01em;
     margin-bottom: 4px;
   }
-  .pack-price span { font-size: 28px; }
+  .pack-price sup { font-size: 26px; vertical-align: top; margin-top: 8px; }
   .pack-ht {
     font-size: 10px;
     letter-spacing: 0.12em;
@@ -259,33 +288,20 @@
   }
 
   .pack-rows {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
     border-top: 1px solid rgba(255,255,255,0.08);
     flex: 1;
   }
   .pack-row {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: baseline;
     gap: 12px;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 11px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
   }
   .pack-row:last-child { border-bottom: none; }
-  .pack-row-key {
-    font-size: 11px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.35);
-  }
-  .pack-row-val {
-    font-size: 11.5px;
-    font-weight: 500;
-    color: #fff;
-    text-align: right;
-  }
-  .pack-row-val.accent { color: var(--orange); }
+  .pk { font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.35); }
+  .pv { font-size: 11.5px; font-weight: 500; color: #fff; text-align: right; }
 
   .packs-common {
     font-size: 12px;
@@ -293,102 +309,87 @@
     color: rgba(255,255,255,0.4);
     line-height: 1.7;
     border-top: 1px solid rgba(255,255,255,0.08);
-    padding-top: 24px;
+    padding-top: 20px;
   }
   .packs-common strong { color: rgba(255,255,255,0.65); font-weight: 500; }
 
-  /* ─── DÉROULEMENT ─── */
-  .deroulement-section {
-    background: #f7f7f5;
-    border-bottom: 1px solid var(--rule);
-  }
-  .timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+  /* ─── MÉTHODE ─── */
+  .methode { background: #fff; border-bottom: 1px solid var(--rule); }
+  .methode-body {
+    font-size: 15.5px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #333;
     max-width: 640px;
+  }
+
+  /* ─── DÉROULEMENT ─── */
+  .deroulement { background: #f7f7f5; border-bottom: 1px solid var(--rule); }
+  .timeline {
+    max-width: 600px;
     margin-bottom: 36px;
   }
-  .timeline-row {
+  .tl-row {
     display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 24px;
-    padding: 20px 0;
+    grid-template-columns: 72px 1fr;
+    gap: 28px;
+    padding: 18px 0;
     border-bottom: 1px solid rgba(0,0,0,0.08);
     align-items: baseline;
   }
-  .timeline-row:last-child { border-bottom: none; }
-  .timeline-day {
+  .tl-row:last-child { border-bottom: none; }
+  .tl-day {
     font-family: 'Anton', sans-serif;
-    font-size: 15px;
-    color: var(--orange);
+    font-size: 14px;
+    color: rgba(0,0,0,0.35);
     letter-spacing: 0.05em;
     text-transform: uppercase;
   }
-  .timeline-desc {
+  .tl-desc {
     font-size: 13.5px;
     font-weight: 300;
     color: #444;
     line-height: 1.6;
   }
-  .timeline-desc strong { font-weight: 500; color: var(--black); }
+  .tl-desc strong { font-weight: 500; color: var(--black); }
   .deroulement-close {
     font-size: 13px;
     font-weight: 300;
     color: #666;
     line-height: 1.7;
-    max-width: 560px;
+    max-width: 540px;
   }
 
   /* ─── CTA ─── */
-  .cta-section {
-    background: var(--black);
-    color: #fff;
-    padding: 80px 48px;
-  }
+  .cta-section { background: var(--black); padding: 88px 48px; }
   .cta-inner {
     max-width: 960px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr 1fr;
     gap: 64px;
     align-items: end;
   }
-  .cta-label {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.25);
-    font-family: 'DM Sans', sans-serif;
-    margin-bottom: 20px;
-  }
   .cta-title {
     font-family: 'Anton', sans-serif;
-    font-size: clamp(36px, 5vw, 72px);
-    line-height: 0.9;
+    font-size: clamp(48px, 6vw, 88px);
+    line-height: 0.88;
     letter-spacing: 0.01em;
     text-transform: uppercase;
     color: #fff;
-    margin-bottom: 36px;
+    margin-bottom: 40px;
   }
-  .cta-contacts {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 36px;
-  }
-  .cta-contact-name {
+  .cta-contacts { margin-bottom: 36px; }
+  .cta-name {
     font-size: 13px;
     font-weight: 500;
-    color: rgba(255,255,255,0.65);
-    letter-spacing: 0.04em;
-    margin-bottom: 4px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 6px;
   }
-  .cta-contact-line {
+  .cta-line {
     font-size: 13px;
     font-weight: 300;
-    color: rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.4);
   }
   .cta-btn {
     display: inline-block;
@@ -405,23 +406,33 @@
   }
   .cta-btn:hover { opacity: 0.88; }
   .cta-validity {
+    margin-top: 20px;
+    font-size: 10px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .cta-right {
     display: flex;
     align-items: flex-end;
     padding-bottom: 4px;
   }
-  .cta-validity-text {
-    font-size: 11px;
+  .cta-aside {
+    font-size: 10px;
     font-weight: 300;
-    color: rgba(255,255,255,0.2);
-    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.15);
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     font-family: 'DM Sans', sans-serif;
+    line-height: 1.8;
   }
 
   /* ─── FOOTER ─── */
   footer {
     background: #050505;
-    padding: 20px 48px;
+    padding: 18px 48px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -436,22 +447,23 @@
   }
 
   /* ─── RESPONSIVE ─── */
-  @media (max-width: 720px) {
-    .hero-inner { padding: 48px 24px 48px; }
-    .hero-footer { padding: 16px 24px; }
-    .section-inner { padding: 56px 24px; }
+  @media (max-width: 760px) {
+    .hero-body { padding: 48px 24px 40px; }
+    .hero-foot { padding: 16px 24px; flex-direction: column; gap: 6px; }
+    .wrap { padding: 64px 24px; }
+    .change-grid { grid-template-columns: 1fr; }
     .packs-grid { grid-template-columns: 1fr; }
-    .pack-col { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
-    .pack-col:last-child { border-bottom: none; }
-    .cta-section { padding: 56px 24px; }
+    .pack { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .pack:last-child { border-bottom: none; }
+    .cta-section { padding: 64px 24px; }
     .cta-inner { grid-template-columns: 1fr; gap: 40px; }
-    .cta-validity { padding-bottom: 0; }
-    footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px 24px; }
+    footer { flex-direction: column; gap: 8px; text-align: center; padding: 18px 24px; }
   }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <img src="https://raw.githubusercontent.com/Jeewelkn/tumbleweed/main/images/JMSTUDIO.png" style="height:114px;object-fit:contain;vertical-align:middle;">
   <div class="nav-right">
@@ -463,119 +475,148 @@
   </div>
 </nav>
 
-<!-- ═══ HERO ═══ -->
+<!-- ═══ 1 — HERO ═══ -->
 <section class="hero">
-  <div class="hero-inner">
+  <div class="hero-body">
     <div class="hero-eyebrow">Proposition de collaboration · JMStudio</div>
     <div class="hero-title">Tumbleweed<br>× JMStudio</div>
     <p class="hero-sub">Stratégie vidéo — Proposition de collaboration</p>
   </div>
-  <div class="hero-footer">
-    <span class="hero-location">Nantes · Août 2026</span>
-    <span class="hero-location">Production vidéo & motion design</span>
+  <div class="hero-foot">
+    <span>Nantes · Août 2026</span>
+    <span>Production vidéo & motion design</span>
   </div>
 </section>
 
-<!-- ═══ CONTEXTE ═══ -->
-<section class="contexte-section" id="contexte">
-  <div class="section-inner">
-    <div class="section-label">Contexte</div>
-    <div class="section-title">Là où vous<br>en êtes.</div>
-    <p class="contexte-body">2 200 abonnés Instagram pour 15 publications : votre communauté est en avance sur votre contenu. Les publicités CBD étant restreintes sur Meta et Google, le contenu organique est votre principal levier d'acquisition scalable. Et vous disposez d'un atout que personne d'autre n'a à Nantes : un lieu qui est un plateau de tournage naturel.</p>
+<!-- ═══ 2 — CONTEXTE ═══ -->
+<section class="contexte" id="contexte">
+  <div class="wrap">
+    <div class="s-label">Contexte</div>
+    <div class="s-title">Là où vous<br>en êtes.</div>
+    <p class="contexte-body">2 200 abonnés Instagram pour 15 publications : votre communauté est en avance sur votre contenu. Et vous disposez d'un atout que personne d'autre n'a à Nantes : un lieu qui est un plateau de tournage naturel.</p>
+    <div class="contexte-callout">
+      <p>La publicité CBD étant verrouillée sur Meta et Google, vos concurrents et vous jouez sur le même terrain : le contenu organique. C'est le seul levier où investir produit un avantage cumulatif — chaque vidéo publiée continue de travailler.</p>
+    </div>
     <p class="contexte-close">Une stratégie qui couvre tout le parcours client, de la découverte à la fidélisation.</p>
   </div>
 </section>
 
-<!-- ═══ OFFRES ═══ -->
-<section class="offres-section" id="offres">
-  <div class="section-inner" style="max-width:100%;padding:80px 48px;">
+<!-- ═══ 3 — CE QUE LA VIDÉO CHANGE ═══ -->
+<section class="video-change" id="video-change">
+  <div class="wrap">
+    <div class="s-label">Impacts</div>
+    <div class="s-title">Ce que la vidéo<br>change, concrètement.</div>
+    <p class="video-change-intro">Votre lieu est votre meilleur argument commercial — mais il ne travaille que pour ceux qui ont déjà franchi la porte. La vidéo le fait travailler sur Instagram, sur votre Shopify, dans les stories de vos clients :</p>
+    <div class="change-grid">
+      <div class="change-item">
+        <div class="change-num">01</div>
+        <div class="change-title">Déclencher la visite</div>
+        <p class="change-desc">Des vidéos d'ambiance qui transmettent ce que des photos ne peuvent pas : le contraste rue grise / intérieur seventies, le son, le mouvement.</p>
+      </div>
+      <div class="change-item">
+        <div class="change-num">02</div>
+        <div class="change-title">Convertir en ligne</div>
+        <p class="change-desc">Des formats produit qui restituent texture et usage réel, là où l'hésitation fait abandonner le panier.</p>
+      </div>
+      <div class="change-item">
+        <div class="change-num">03</div>
+        <div class="change-title">Nourrir la communauté</div>
+        <p class="change-desc">2 200 abonnés attendent du contenu. La régularité transforme cette attente en habitude de visite.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4 — OFFRES ═══ -->
+<section class="offres" id="offres">
+  <div class="wrap" style="max-width:100%;">
     <div style="max-width:960px;margin:0 auto;">
-      <div class="section-label">Tarifs</div>
-      <div class="section-title">Trois niveaux<br>d'engagement.</div>
+      <div class="s-label s-label-dark">Tarifs</div>
+      <div class="s-title s-title-white">Trois niveaux<br>d'engagement.</div>
 
       <div class="packs-grid">
 
         <!-- ESSENTIEL -->
-        <div class="pack-col">
-          <div class="pack-name-group">
-            <span class="pack-label-tag">Pack</span>
+        <div class="pack">
+          <div class="pack-name-row">
+            <span class="pack-tag">Pack</span>
             <span class="pack-name">Essentiel</span>
           </div>
-          <div class="pack-price">1 900<span>€</span></div>
+          <div class="pack-price">1 900<sup>€</sup></div>
           <div class="pack-ht">HT</div>
           <div class="pack-rows">
             <div class="pack-row">
-              <span class="pack-row-key">Vidéos livrées</span>
-              <span class="pack-row-val">3</span>
+              <span class="pk">Vidéos livrées</span>
+              <span class="pv">3</span>
             </div>
             <div class="pack-row">
-              <span class="pack-row-key">Tournage</span>
-              <span class="pack-row-val">½ journée</span>
+              <span class="pk">Tournage</span>
+              <span class="pv">½ journée</span>
             </div>
             <div class="pack-row">
-              <span class="pack-row-key">Livraison</span>
-              <span class="pack-row-val">10 jours</span>
+              <span class="pk">Livraison</span>
+              <span class="pv">10 jours</span>
             </div>
             <div class="pack-row">
-              <span class="pack-row-key">Révisions via Notion</span>
-              <span class="pack-row-val">1 aller-retour</span>
+              <span class="pk">Révisions via Notion</span>
+              <span class="pv">1 aller-retour</span>
             </div>
           </div>
         </div>
 
-        <!-- CONVERSION (featured) -->
-        <div class="pack-col featured">
+        <!-- CONVERSION -->
+        <div class="pack featured">
           <div class="pack-badge">Recommandé</div>
-          <div class="pack-name-group">
-            <span class="pack-label-tag">Pack</span>
+          <div class="pack-name-row">
+            <span class="pack-tag">Pack</span>
             <span class="pack-name">Conversion</span>
           </div>
-          <div class="pack-price">2 900<span>€</span></div>
+          <div class="pack-price">2 900<sup>€</sup></div>
           <div class="pack-ht">HT</div>
           <div class="pack-rows">
             <div class="pack-row">
-              <span class="pack-row-key">Vidéos livrées</span>
-              <span class="pack-row-val">6 dont 1 film de marque</span>
+              <span class="pk">Vidéos livrées</span>
+              <span class="pv">6 dont 1 film de marque</span>
             </div>
             <div class="pack-row">
-              <span class="pack-row-key">Tournage</span>
-              <span class="pack-row-val">1 journée</span>
+              <span class="pk">Tournage</span>
+              <span class="pv">1 journée</span>
             </div>
             <div class="pack-row">
-              <span class="pack-row-key">Livraison</span>
-              <span class="pack-row-val">20 jours</span>
+              <span class="pk">Livraison</span>
+              <span class="pv">20 jours</span>
             </div>
             <div class="pack-row">
-              <span class="pack-row-key">Révisions via Notion</span>
-              <span class="pack-row-val">2 allers-retours</span>
+              <span class="pk">Révisions via Notion</span>
+              <span class="pv">2 allers-retours</span>
             </div>
           </div>
         </div>
 
         <!-- SIGNATURE -->
-        <div class="pack-col">
-          <div class="pack-name-group">
-            <span class="pack-label-tag">Pack</span>
+        <div class="pack">
+          <div class="pack-name-row">
+            <span class="pack-tag">Pack</span>
             <span class="pack-name">Signature</span>
           </div>
-          <div class="pack-price">3 900<span>€</span></div>
+          <div class="pack-price">3 900<sup>€</sup></div>
           <div class="pack-ht">HT</div>
           <div class="pack-rows">
             <div class="pack-row">
-              <span class="pack-row-key">Vidéos livrées</span>
-              <span class="pack-row-val">10 dont 3 événements</span>
+              <span class="pk">Vidéos livrées</span>
+              <span class="pv">10 dont 3 événements</span>
             </div>
             <div class="pack-row">
-              <span class="pack-row-key">Tournage</span>
-              <span class="pack-row-val">2 journées</span>
+              <span class="pk">Tournage</span>
+              <span class="pv">2 journées</span>
             </div>
             <div class="pack-row">
-              <span class="pack-row-key">Livraison</span>
-              <span class="pack-row-val">Sur 3 mois</span>
+              <span class="pk">Livraison</span>
+              <span class="pv">Sur 3 mois</span>
             </div>
             <div class="pack-row">
-              <span class="pack-row-key">Révisions via Notion</span>
-              <span class="pack-row-val accent">Illimitées</span>
+              <span class="pk">Révisions via Notion</span>
+              <span class="pv">Illimitées</span>
             </div>
           </div>
         </div>
@@ -587,28 +628,37 @@
   </div>
 </section>
 
-<!-- ═══ DÉROULEMENT ═══ -->
-<section class="deroulement-section" id="deroulement">
-  <div class="section-inner">
-    <div class="section-label">Planning</div>
-    <div class="section-title">De la signature<br>à la publication.</div>
+<!-- ═══ 5 — MÉTHODE ═══ -->
+<section class="methode" id="methode">
+  <div class="wrap">
+    <div class="s-label">Approche</div>
+    <div class="s-title">Une méthode,<br>pas juste des vidéos.</div>
+    <p class="methode-body">Chaque collaboration démarre par une session stratégique : on définit ensemble les formats, le calendrier et les objectifs avant de sortir la caméra. Vous ne payez pas des vidéos, vous investissez dans un système de contenu.</p>
+  </div>
+</section>
+
+<!-- ═══ 6 — DÉROULEMENT ═══ -->
+<section class="deroulement" id="deroulement">
+  <div class="wrap">
+    <div class="s-label">Planning</div>
+    <div class="s-title">De la signature<br>à la publication.</div>
 
     <div class="timeline">
-      <div class="timeline-row">
-        <span class="timeline-day">J0</span>
-        <span class="timeline-desc"><strong>Validation et acompte 30 %</strong></span>
+      <div class="tl-row">
+        <span class="tl-day">J0</span>
+        <span class="tl-desc"><strong>Validation et acompte 30 %</strong></span>
       </div>
-      <div class="timeline-row">
-        <span class="timeline-day">J+7</span>
-        <span class="timeline-desc"><strong>Tournage sur place</strong></span>
+      <div class="tl-row">
+        <span class="tl-day">J+7</span>
+        <span class="tl-desc"><strong>Tournage sur place</strong></span>
       </div>
-      <div class="timeline-row">
-        <span class="timeline-day">J+12</span>
-        <span class="timeline-desc"><strong>Première version</strong>, révisions via Notion</span>
+      <div class="tl-row">
+        <span class="tl-day">J+12</span>
+        <span class="tl-desc"><strong>Première version</strong>, révisions via Notion</span>
       </div>
-      <div class="timeline-row">
-        <span class="timeline-day">J+20</span>
-        <span class="timeline-desc"><strong>Contenus livrés</strong>, prêts à publier</span>
+      <div class="tl-row">
+        <span class="tl-day">J+20</span>
+        <span class="tl-desc"><strong>Contenus livrés</strong>, prêts à publier</span>
       </div>
     </div>
 
@@ -616,21 +666,21 @@
   </div>
 </section>
 
-<!-- ═══ CTA ═══ -->
+<!-- ═══ 7 — CTA ═══ -->
 <section class="cta-section" id="contact">
   <div class="cta-inner">
     <div>
-      <div class="cta-label">Prochaine étape</div>
+      <div class="s-label s-label-dark" style="margin-bottom:20px;">Prochaine étape</div>
       <div class="cta-title">On en<br>parle ?</div>
       <div class="cta-contacts">
-        <div class="cta-contact-name">Florian — JMStudio</div>
-        <div class="cta-contact-line">06 89 30 84 23 · jmstudiovisuals@gmail.com</div>
+        <div class="cta-name">Florian — JMStudio</div>
+        <div class="cta-line">06 89 30 84 23 · jmstudiovisuals@gmail.com</div>
       </div>
       <a href="tumbleweed.html" class="cta-btn">Voir la stratégie détaillée →</a>
-      <p style="margin-top:20px;font-size:11px;font-weight:300;color:rgba(255,255,255,0.2);letter-spacing:0.08em;text-transform:uppercase;font-family:'DM Sans',sans-serif;">Proposition valable 30 jours.</p>
+      <p class="cta-validity">Proposition valable 30 jours.</p>
     </div>
-    <div class="cta-validity">
-      <div class="cta-validity-text">JMStudio<br>Nantes, France</div>
+    <div class="cta-right">
+      <div class="cta-aside">JMStudio<br>Nantes, France<br>Production vidéo<br>& motion design</div>
     </div>
   </div>
 </section>
